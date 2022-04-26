@@ -1,0 +1,2 @@
+
+export const TOKEN_ADDR_SKULL = "0xBcc66ed2aB491e9aE7Bf8386541Fb17421Fa9d35"

@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { ERC20__factory } from "roll-js-contracts/social-money/v1.5/contracts";
+import { ethers } from "ethers";
+import { config } from "./config";
+import { EthProvider } from "./providers/ethProvider";
+import { Workspace } from "./components/workspace";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <EthProvider>
+      <div
+        style={{
+          display: "flex",
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <Workspace />
+      </div>
+    </EthProvider>
   );
 }
 
